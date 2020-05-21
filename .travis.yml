@@ -1,0 +1,28 @@
+language: node_js
+node_js:
+  - 'node'
+
+cache: npm
+
+script: npm run build
+
+# before_deploy:
+# - git config --replace-all remote.origin.fetch +refs/heads/*:refs/remotes/origin/*
+#   - git fetch
+#   - git checkout -qf master
+#   - git checkout -qf development
+# - git config user.name "Naveen Rohilla"
+# - git config user.email "naveenrohilla99@gmail.com"
+
+deploy:
+  provider: pages
+  skip_cleanup: true
+  keep_history: false
+  local_dir: dist
+  target_branch: master
+  github_token: $GITHUB_TOKEN
+  email: 'naveenrohilla99@gmail.com'
+  name: 'Naveen Rohilla'
+  commit_message: 'Deploy'
+  on:
+    branch: development
