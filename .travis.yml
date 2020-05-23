@@ -6,14 +6,6 @@ cache: npm
 
 script: npm run build
 
-# before_deploy:
-# - git config --replace-all remote.origin.fetch +refs/heads/*:refs/remotes/origin/*
-#   - git fetch
-#   - git checkout -qf master
-#   - git checkout -qf development
-# - git config user.name "Naveen Rohilla"
-# - git config user.email "naveenrohilla99@gmail.com"
-
 deploy:
   provider: pages
   skip_cleanup: true

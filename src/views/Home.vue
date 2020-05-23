@@ -1,15 +1,11 @@
 <template>
-  <div class="home"></div>
+  <v-row>
+    <v-col class="text-center headline">
+      <h2>Hello</h2>
+    </v-col>
+  </v-row>
 </template>
 
 <script>
-// @ is an alias to /src
-// import HelloWorld from '@/components/HelloWorld.vue'
-
-export default {
-  name: 'Home',
-  components: {
-    // HelloWorld,
-  },
-}
+export default {}
 </script>

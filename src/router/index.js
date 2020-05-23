@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
 
 Vue.use(VueRouter)
 
@@ -8,19 +7,23 @@ const routes = [
   {
     path: '/',
     name: 'Home',
-    component: Home,
+    component: () => import(/* webpackChunkName: "home" */ '@/views/Home.vue'),
   },
   {
-    path: '/about',
-    name: 'About',
-    component: () =>
-      import(/* webpackChunkName: "about" */ '@/views/About.vue'),
+    path: '/projects',
+    name: 'Projects',
+    component: () => import(/* webpackChunkName: "projects" */ '@/views/Projects.vue'),
+  },
+  {
+    path: '/resume',
+    name: 'Resume',
+    component: () => import(/* webpackChunkName: "resume" */ '@/views/Resume.vue'),
   },
   {
     path: '/404',
     name: '404',
-    component: () =>
-      import(/* webpackChunkName: "fileNotFound" */ '@/views/FileNotFound.vue'),
+    meta: { layout: 'Error' },
+    component: () => import(/* webpackChunkName: "fileNotFound" */ '@/views/FileNotFound.vue'),
   },
   {
     path: '*',

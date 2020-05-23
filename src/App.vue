@@ -1,27 +1,18 @@
 <template>
-  <v-app>
-    <v-app-bar app color="primary" dark>
-      <div class="d-flex align-center">
-        Naveen Rohilla
-      </div>
-      <v-spacer></v-spacer>
-      Github Pages
-    </v-app-bar>
-
-    <v-content>
+  <v-app id="inspire">
+    <component :is="layout">
       <router-view />
-    </v-content>
+    </component>
   </v-app>
 </template>
 
 <script>
+const default_layout = 'Default'
 export default {
-  name: 'App',
-
-  components: {},
-
-  data: () => ({
-    //
-  }),
+  computed: {
+    layout() {
+      return `${this.$route.meta.layout || default_layout}-layout`
+    },
+  },
 }
 </script>
