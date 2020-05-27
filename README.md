@@ -1,6 +1,6 @@
 # RNaveen99.github.io
 
-[RNaveen99.github.io](RNaveen99.github.io)
+[RNaveen99.github.io](https://RNaveen99.github.io)
 
 ## Project setup
 

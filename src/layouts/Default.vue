@@ -5,6 +5,23 @@
     <v-content>
       <slot />
     </v-content>
+    <v-speed-dial v-model="fab" fab fixed bottom right class="d-sm-none">
+      <template v-slot:activator>
+        <v-btn v-model="fab" color="blue darken-2" dark fab>
+          <v-icon v-if="fab">mdi-close</v-icon>
+          <v-icon v-else>mdi-plus</v-icon>
+        </v-btn>
+      </template>
+      <v-btn text @click="toggleTheme">
+        <v-icon>fas fa-moon</v-icon>
+      </v-btn>
+      <v-btn fab dark small color="indigo" :to="{ name: 'Resume' }">
+        <v-icon>mdi-file-account</v-icon>
+      </v-btn>
+      <v-btn fab dark small color="green" :to="{ name: 'Projects' }">
+        <v-icon>mdi-laptop</v-icon>
+      </v-btn>
+    </v-speed-dial>
   </div>
 </template>
 
@@ -18,6 +35,7 @@ export default {
     // NavigationDrawer,
   },
   data: () => ({
+    fab: false,
     drawer: false,
     links: [
       { icon: 'mdi-laptop', text: 'Projects', name: 'Projects' },
@@ -30,6 +48,10 @@ export default {
     },
     closeDrawer(navigationDrawer) {
       this.drawer = navigationDrawer
+    },
+    toggleTheme() {
+      this.$vuetify.theme.dark = !this.$vuetify.theme.dark
+      this.themeDark = this.$vuetify.theme.dark
     },
   },
 }

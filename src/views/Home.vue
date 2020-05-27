@@ -10,7 +10,7 @@
               Naveen Rohilla
             </v-card-title>
 
-            <v-card-subtitle class="d-flex">
+            <v-card-subtitle class="d-flex justify-center">
               <v-btn href="mailto:naveenrohilla99@gmail.com" target="_blank" text>
                 <v-icon>mdi-gmail</v-icon>
               </v-btn>
@@ -35,31 +35,11 @@
         </v-col>
       </v-row>
     </v-container>
-    <v-speed-dial v-model="fab" fab fixed bottom right class="d-sm-none">
-      <template v-slot:activator>
-        <v-btn v-model="fab" color="blue darken-2" dark fab>
-          <v-icon v-if="fab">mdi-close</v-icon>
-          <v-icon v-else>mdi-plus</v-icon>
-        </v-btn>
-      </template>
-      <v-btn fab dark small color="indigo" :to="{ name: 'Resume' }">
-        <v-icon>mdi-file-account</v-icon>
-      </v-btn>
-      <v-btn fab dark small color="green" :to="{ name: 'Projects' }">
-        <v-icon>mdi-laptop</v-icon>
-      </v-btn>
-    </v-speed-dial>
   </div>
 </template>
 
 <script>
-export default {
-  data() {
-    return {
-      fab: false,
-    }
-  },
-}
+export default {}
 </script>
 <style lang="scss" scoped>
 </style>
