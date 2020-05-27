@@ -13,6 +13,18 @@ const routes = [
     path: '/projects',
     name: 'Projects',
     component: () => import(/* webpackChunkName: "projects" */ '@/views/Projects.vue'),
+    children: [
+      {
+        path: ':id',
+        name: 'ProjectModal',
+        component: () => import(/* webpackChunkName: "project" */ '@/views/Project.vue'),
+      },
+    ],
+  },
+  {
+    path: '/projects/:id',
+    name: 'Project',
+    component: () => import(/* webpackChunkName: "project" */ '@/views/Project.vue'),
   },
   {
     path: '/resume',

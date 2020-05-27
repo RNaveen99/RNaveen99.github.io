@@ -1,6 +1,6 @@
 <template>
-  <v-app-bar app color="blue darken-3" dark :clipped-left="$vuetify.breakpoint.smAndDown">
-    <v-app-bar-nav-icon @click.stop="toggleDrawer" class="d-sm-none"></v-app-bar-nav-icon>
+  <v-app-bar app :clipped-left="$vuetify.breakpoint.smAndDown">
+    <v-app-bar-nav-icon @click.stop="toggleDrawer" class="d-none"></v-app-bar-nav-icon>
     <v-toolbar-title :class="$vuetify.breakpoint.smAndDown ? 'mx-auto' : ''">
       <v-btn :to="{ name: 'Home' }" class="ml-n5 font-weight-bold title" exact text>
         Naveen Rohilla
@@ -19,6 +19,18 @@
       >
         {{ link.text }}
       </v-btn>
+      <v-btn text @click="toggleTheme">
+        <v-switch
+          @click="toggleTheme"
+          @change="toggleTheme"
+          v-model="themeDark"
+          hide-details
+          class="d-inline-block"
+          label=""
+        >
+        </v-switch>
+        <v-icon>fas fa-moon</v-icon>
+      </v-btn>
     </div>
   </v-app-bar>
 </template>
@@ -36,6 +48,7 @@ export default {
   data() {
     return {
       myDrawer: this.drawer,
+      themeDark: this.$vuetify.theme.dark,
     }
   },
   watch: {
@@ -46,6 +59,10 @@ export default {
   methods: {
     toggleDrawer() {
       this.$emit('toggle-drawer')
+    },
+    toggleTheme() {
+      this.$vuetify.theme.dark = !this.$vuetify.theme.dark
+      this.themeDark = this.$vuetify.theme.dark
     },
   },
 }

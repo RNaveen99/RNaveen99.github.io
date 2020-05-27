@@ -1,7 +1,7 @@
 <template>
   <div>
     <NavigationBar :links="links" :drawer="drawer" @toggle-drawer="toggleDrawer" />
-    <NavigationDrawer :links="links" @close-drawer="closeDrawer" :drawer="drawer" />
+    <!-- <NavigationDrawer :links="links" @close-drawer="closeDrawer" :drawer="drawer" /> -->
     <v-content>
       <slot />
     </v-content>
@@ -9,12 +9,13 @@
 </template>
 
 <script>
-import NavigationDrawer from '@/components/NavigationDrawer.vue'
 import NavigationBar from '@/components/NavigationBar.vue'
+// import NavigationDrawer from '@/components/NavigationDrawer.vue'
+
 export default {
   components: {
-    NavigationDrawer,
     NavigationBar,
+    // NavigationDrawer,
   },
   data: () => ({
     drawer: false,
