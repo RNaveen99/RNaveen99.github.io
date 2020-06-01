@@ -6,6 +6,7 @@ import vuetify from './plugins/vuetify'
 
 import Default from '@/layouts/Default.vue'
 import Error from '@/layouts/Error.vue'
+import './registerServiceWorker'
 
 Vue.component('Default-layout', Default)
 Vue.component('Error-layout', Error)
