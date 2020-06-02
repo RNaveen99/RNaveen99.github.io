@@ -1,0 +1,35 @@
+<!DOCTYPE html><html lang=en><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1"><title>Naveen Rohilla</title><link rel=stylesheet href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900"><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@mdi/font@latest/css/materialdesignicons.min.css><script>// Single Page Apps for GitHub Pages
+      // ----------------------------------------------------------------------
+      // http://www.foo.tld/ ?p=/ one/two & q=a=b~and~c=d#qwe
+      // This script checks to see if a redirect is present in the query string
+      // and converts it back into the correct url and adds it to the
+      // browser's history using window.history.replaceState(...),
+      // which won't cause the browser to attempt to load the new url.
+      // When the single page app is loaded further down in this file,
+      // the correct url will be waiting in the browser's history for
+      // the single page app to route accordingly.
+      ;(function(url) {
+        if (url.search) {
+          let new_url = {}
+          url.search
+            .slice(1)
+            .split('&')
+            .forEach((v) => {
+              let a = v.split('=')
+              new_url[a[0]] = a
+                .slice(1)
+                .join('=')
+                .replace(/~and~/g, '&')
+            })
+          if (new_url.path !== undefined) {
+            window.history.replaceState(
+              null,
+              null,
+              url.pathname.slice(0, -1) +
+                (new_url.path || '') +
+                (new_url.query ? '?' + new_url.query : '') +
+                url.hash
+            )
+          }
+        }
+      })(window.location)</script><link href=/css/fileNotFound.fba5bb1e.css rel=prefetch><link href=/css/fileNotFound~home~project~projects~resume.85e964b6.css rel=prefetch><link href=/css/home.2ab88d9e.css rel=prefetch><link href=/css/projects.73395f90.css rel=prefetch><link href=/css/project~projects.faf716d9.css rel=prefetch><link href=/css/resume.fba5bb1e.css rel=prefetch><link href=/js/fileNotFound.614db18e.js rel=prefetch><link href=/js/fileNotFound~home~project~projects~resume.b5289ccd.js rel=prefetch><link href=/js/home.766fdefd.js rel=prefetch><link href=/js/project.624ae09c.js rel=prefetch><link href=/js/projects.ef8cd7d2.js rel=prefetch><link href=/js/project~projects.4616f280.js rel=prefetch><link href=/js/resume.1d13d3cc.js rel=prefetch><link href=/css/chunk-vendors.1b3a4164.css rel=preload as=style><link href=/js/app.34720a7c.js rel=preload as=script><link href=/js/chunk-vendors.9e9e943a.js rel=preload as=script><link href=/css/chunk-vendors.1b3a4164.css rel=stylesheet><link rel=icon type=image/png sizes=32x32 href=/img/icons/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/img/icons/favicon-16x16.png><link rel=manifest href=/manifest.json><meta name=theme-color content=#4DBA87><meta name=apple-mobile-web-app-capable content=no><meta name=apple-mobile-web-app-status-bar-style content=default><meta name=apple-mobile-web-app-title content=rnaveen99-github-io><link rel=apple-touch-icon href=/img/icons/apple-touch-icon-152x152.png><link rel=mask-icon href=/img/icons/safari-pinned-tab.svg color=#4DBA87><meta name=msapplication-TileImage content=/img/icons/msapplication-icon-144x144.png><meta name=msapplication-TileColor content=#000000></head><body><noscript><strong>We're sorry but rnaveen99-github-io doesn't work properly without JavaScript enabled. Please enable it to continue.</strong></noscript><div id=app></div><script src=/js/chunk-vendors.9e9e943a.js></script><script src=/js/app.34720a7c.js></script></body></html>
